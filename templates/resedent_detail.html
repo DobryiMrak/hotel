@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<h1>Подробная информация о пользователе</h1>
+	<p>ФИО - {{object.second_name}} {{object.first_name}} {{object.father_name}}</p>
+	<p>ДАТА РОЖДЕНИЯ - {{object.burn_date}}</p>
+	{% if object.gender == 'm' %}
+		<p>ПОЛ - Мужской</p>
+	{% else %}
+		<p>ПОЛ - Женский</p>
+	{% endif %}
+	<p>НОМЕР ТЕЛЕФОНА - {{object.phone_number}}</p>
+	<p>СЕРИЯ ПАСПОРТА - {{object.pasport_seria}}</p>
+	<p>НОМЕР ПАСПОРТА - {{object.pasport_number}}</p>
+	<hr/>
+	<p><a href="{% url 'resedent_edit' resedent.pk %}">Изменить данные о пользователе</a></p>
+	<p><a href="{% url 'resedent_delete' resedent.pk %}">Удалить пользователя</a></p>
+{% endblock content %}

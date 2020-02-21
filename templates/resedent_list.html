@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<h1>Список всех постояльцев</h1>
+	{% for resedent in object_list %}
+		<p><a href="{% url 'resedent_detail' resedent.pk %}">{{resedent.first_name}} {{resedent.second_name}} {{resedent.pasport_seria}} {{resedent.pasport_nomer}}</a></p>
+	{% endfor %}
+{% endblock content %}

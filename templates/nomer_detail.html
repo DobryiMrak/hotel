@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<p>НОМЕР НОМЕРА - {{ object.number }}</p>
+	<p>КОЛ-ВО КОМНАТ - {{ object.count_of_rooms }}</p>
+	<p>ПЛОЩАДЬ НОМЕРА - {{ object.square }}</p>
+	<p><a href="{% url 'nomer_edit' nomer.pk %}">Изменить данные о номере</a></p>
+	<p><a href="{% url 'nomer_delete' nomer.pk %}">Удалить номер</a></p>
+{% endblock content %}

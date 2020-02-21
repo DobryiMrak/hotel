@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <p>Правильное оформление файла xls вы можете найти в приложенной документации.</p>
+    <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Загрузить</button>
+  </form>
+
+  <p><a href="{% url 'home' %}">Вернуться назад</a></p>
+{% endblock %}

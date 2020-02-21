@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<h1>Выселение</h1>
+	<form method='post'>{% csrf_token %}
+		<p>Вы уверены, что хотите удалить выселить "{{ object.resedent.first_name }}" из  {{ object.nomer.number }}?</p>
+		<input type="submit" value="Confirm">
+	</form>
+{% endblock %}

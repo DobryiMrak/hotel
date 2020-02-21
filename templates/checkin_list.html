@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<h1>Список всех заселений</h1>
+	{% for checkin in object_list %}
+		<p><a href="{% url 'checkin_detail' checkin.pk %}">{{ checkin.resedent }} --- {{checkin.nomer.number}}</a></p>
+	{% endfor %}
+{% endblock content %}

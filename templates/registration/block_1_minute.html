@@ -1,0 +1,11 @@
+{% block content %}
+    <form action="/users/login/">
+         <button id="disbutton" disabled>КНОПКА</button>
+    </form>
+   <script>
+    setTimeout(() => {
+      document.getElementById('disbutton').removeAttribute('disabled')
+    }, 60 * 1000)
+   </script>
+
+{% endblock %}

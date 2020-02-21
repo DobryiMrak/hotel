@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<h1>Удаление пользователя</h1>
+	{% if object.is_living %}
+	<p>Простите, но вы не можете удалить этого постояльца, так как он проживает в номере</p>
+	{% else %}
+	<form method='post'>{% csrf_token %}
+		<p>Вы уверены, что хотите удалить постояльца "{{ object.second_name }} {{ object.first_name }}"?</p>
+		<input type="submit" value="Confirm">		
+	</form>
+	{% endif %}
+{% endblock %}

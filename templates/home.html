@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+    {% if user.is_superuser %}
+        Привет, управляющий {{ user.username }}
+    {% else %}
+        Привет, администратор {{ user.username }}!
+    {% endif %}
+    <p><a href="{% url 'users:logout' %}">Выход из системы</a></p>
+{% else %}
+  <p>Вы не вошли в систему</p>
+  <a href="{% url 'users:login' %}">Войти в систему</a>
+{% endif %}
+{% endblock %}

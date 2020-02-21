@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Заселение</h1>
+    <p>НОМЕР КОМНАТЫ - <a href="{% url 'nomer_detail' object.nomer.pk %}">{{ object.nomer.number }}</a></p>
+	<p>ЗАСЕЛЕН - <a href="{% url 'resedent_detail' object.resedent.pk %}"> {{ object.resedent }}</a></p>
+	<p><a href="{% url 'checkin_document' object.id %}">Документ о заселении</a></p>
+    <p><a href="{% url 'checkout_document' object.id %}">Документ о выселении</a></p>
+    <p><a href="{% url 'checkin_delete' object.id %}">Выселить</a> </p>
+{% endblock content %}

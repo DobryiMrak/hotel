@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<h1>Список всех номеров</h1>
+	{% for nomer in object_list %}
+		{% if nomer.hotel == user.hotel %}
+		<p><a href="{% url 'nomer_detail' nomer.pk %}">{{nomer.number}} {{nomer.count_of_rooms}} {{nomer.square}} </a></p>
+		{% else %}
+		{% endif %}
+	{% endfor %}
+{% endblock content %}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %} Django Auth Tutorial {% endblock %}</title>
+</head>
+<body>
+  <main>
+    <header>
+        {% if user.is_authenticated %}
+            {% if user.is_superuser %}
+                <p><a href="{% url 'upload_file' %}">Загрузка xls файла</a></p>
+                <p><a href="{% url 'admin:index' %}">В админ панель</a></p>
+            {% else %}
+    	        <p><a href="{% url 'home' %}">На главную старницу</a></p>
+    	        <p><a href="{% url 'resedent_new' %}">Добавить постояльца</a></p>
+    	        <p><a href="{% url 'resedent_list' %}">Список постояльцев</a></p>
+                <p><a href="{% url 'nomer_new' %}">Добавить номер</a></p>
+                <p><a href="{% url 'nomer_list' %}">Список номеров</a></p>
+                <p><a href="{% url 'checkin_new' %}">Заселение</a></p>
+                <p><a href="{% url 'checkin_list' %}">Список заселевшихся</a></p>
+            {% endif %}
+        </header>
+        <hr>
+        {% endif %}
+    {% block content %}
+    {% endblock %}
+  	<hr>
+  </main>
+</body>
+</html>
